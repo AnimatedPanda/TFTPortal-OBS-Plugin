@@ -1,5 +1,6 @@
 # TFTPortal-OBS-Plugin
 Shows Portal and Augments for Teamfight Tactics (TFT) in an easy to use OBS overlay.
+
 No Twitch integration, no chat commands, no external apps — it's entirely self-contained in OBS!
 
 <img width="1029" height="186" alt="image" src="https://github.com/user-attachments/assets/e9aac3cb-aadf-4c5e-b782-eb4a580ae80a" />
