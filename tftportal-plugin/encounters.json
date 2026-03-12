@@ -1,0 +1,97 @@
+[
+    {
+      "name": "3 Cost Start",
+      "keyword": "Darius",
+      "description": "Start with a random 3-cost champion this game."
+    },
+    {
+      "name": "Silver scrapes",
+      "keyword": "Silver scrapes",
+      "description": "The last two surviving players gain 70 gold for an epic final fight.",
+    },
+    {
+      "name": "Component + Scissors",
+      "keyword": "Gwen",
+      "description": "After the first 3 Carousels, Gwen gifts players a random component and a pair of scissors that cut items into components."
+    },
+    {
+      "name": "Howling abyss",
+      "keyword": "Lissandra",
+      "description": "Gain 5 random 1-costs to fight on the Howling Abyss."
+    },
+    {
+      "name": "Components anvil",
+      "keyword": "Poppy",
+      "description": "Poppy grants you two component anvils."
+    },
+    {
+      "name": "Golden Gala",
+      "keyword": "Twisted Fate",
+      "description": "Twisted Fate deals out all gold tier augments this game."
+    },
+    {
+      "name": "Scuttle Puddle",
+      "keyword": "Rift Herald",
+      "description": "Rift Herald happily fills the game with crabs carrying bonus loot."
+    },
+    {
+      "name": "Upgraded start",
+      "keyword": "Ekko",
+      "description": "Ekko upgrades your starting champion to 2-star."
+    },
+    {
+      "name": "Augment round swap",
+      "keyword": "LeBlanc",
+      "description": "LeBlanc manipulates augments to be offered earlier this game."
+    },
+    {
+      "name": "Gold on player death",
+      "keyword": "Draven",
+      "description": "Whenever a player is eliminated, Draven rewards surviving players with gold per eliminated player."
+    },
+    {
+      "name": "Gold Subscription",
+      "keyword": "Tahm Kench",
+      "description": "Tahm Kench grants you gold each stage."
+    },
+    {
+      "name": "Loot Subscription",
+      "keyword": "Zoe",
+      "description": "Zoe gives you highly varied loot at the start of each stage!"
+    },
+    {
+      "name": "No Opening Encounter",
+      "keyword": "None",
+      "description": "It's a calm day in Runeterra. No encounter this game."
+    },
+    {
+      "name": "Augments rerolls +1",
+      "keyword": "Teemo",
+      "description": "Teemo's scouting party has found +1 Augment reroll for all augments."
+    },
+    {
+      "name": "Prismatic Party",
+      "keyword": "Seraphine",
+      "description": "Seraphine turns all augments to prismatic tier this game."
+    },
+    {
+      "name": "Prismatic prelude",
+      "keyword": "Galio",
+      "description": "Galio's entrance turns the first augment to prismatic this game."
+    },
+    {
+      "name": "Prismatic finale",
+      "keyword": "Zilean",
+      "description": "Zilean ages the last augment to perfection. It will be prismatic this game."
+    },
+    {
+      "name": "Emblem ensemble",
+      "keyword": "Ryze",
+      "description": "Ryze grants you 3 random emblems to begin your journey."
+    },
+    {
+      "name": "2 cost start",
+      "keyword": "Xin Zhao",
+      "description": "Start with a random 2-cost champion this game."
+    }
+  ]
