@@ -36,5 +36,5 @@ If you wish to customize the background panel; or need to report any issues. Ple
 
 
 ## SPECIAL THANKS
-- [BoxBox](https://www.twitch.tv/boxbox) & [aterial](https://www.twitch.tv/aterial) - Original Inspiration
+- [BoxBox](https://www.twitch.tv/boxbox) & Aterial [Twitch](https://www.twitch.tv/aterial)/[GitHub](https://github.com/AterialDawn) - Original Inspiration
 - [L21saac](https://www.twitch.tv/l21saac) - Beta Testing
