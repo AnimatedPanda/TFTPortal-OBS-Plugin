@@ -9,10 +9,12 @@ No Twitch integration, no chat commands, no external apps — it's entirely self
 
 2. Add the Source in OBS
 - Open OBS
-- In your scene's Sources panel, click + and select TFT Portal & Augments.
-- A blank panel will appear showing
-- Drag it above your game/desktop capture in the source list so it draws on top of the game.
-- Resize and position it wherever you want on your stream layout. (This was designed to fit perfectly in the bottom-right corner and match with the existing TFT UI).
+- In your scene's Sources panel, click + and select **TFT Portal & Augments** (or **Browser Source** if using the overlay directly).
+- If using Browser Source: set URL to `file:///C:/Program%20Files/obs-studio/data/obs-plugins/tftportal-plugin/overlay.html` and size to 260×260.
+- Drag it above your game/desktop capture so it draws on top.
+- Resize and position as needed. (Designed for the bottom-right corner to match TFT UI.)
+
+The overlay includes glow pulse, shimmer, and smooth text animations—no npm or build step required.
 
 3. Play TFT
 - The plugin automatically scans the screen every ~2 seconds.
@@ -24,7 +26,10 @@ No Twitch integration, no chat commands, no external apps — it's entirely self
 - Default capture regions are tuned for 1920x1080. If you use a different resolution, right-click the source, open Properties, and adjust the Portal/Augment region coordinates (left, top, width, height).
 - Windows OCR must be available: Settings > Time & language > Language & region — make sure English (or your game language) is installed.
 
-5. Customization/Reporting Bugs
+5. Overlay Data (for plugin integration)
+The overlay reads data from `overlay-data.json` (polled every 500ms) or from URL parameters. If the TFT Portal plugin writes portal/augment data to this file, the overlay will display it automatically. For testing: `overlay.html?portal=Emblem%20ensemble&augment=Air%20Axiom&tier=2`
+
+6. Customization/Reporting Bugs
 If you wish to customize the background panel. Or need to report any issues.
 
 Please reach out:
