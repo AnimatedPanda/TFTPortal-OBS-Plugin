@@ -4,6 +4,13 @@ No Twitch integration, no chat commands, no external apps — it's entirely self
 
 ![](https://github.com/AnimatedPanda/TFTPortal-OBS-Plugin/blob/main/Example%20Animation.gif?raw=true)
 
+### Support
+Please consider buying me a coffee ;)
+
+[!["Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://buymeacoffee.com/animatedpanda))
+
+
+## Installation
 1. Install the plugin files
 - Close OBS, then copy these files:
 - Place the `tftportal-plugin.dll` file into: C:\Program Files\obs-studio\obs-plugins\64bit\
@@ -36,7 +43,8 @@ Please reach out:
 Discord - @animatedpanda
 Twitter/X - @AnimatedPandaTV
 
-
+# Support
+Please consider buying me a coffee ;) 
 
 # SPECIAL THANKS
 - twitch.tv/BoxBox & twitch.tv/aterial - For the original inspiration 
