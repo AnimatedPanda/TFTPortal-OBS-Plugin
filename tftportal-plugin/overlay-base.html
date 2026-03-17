@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>TFT Portal & Augments</title>
+  <style>
+    @font-face {
+      font-family: 'BeaufortForLOL';
+      src: url('BeaufortforLOL-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 260px;
+      height: 260px;
+      overflow: hidden;
+      background: transparent;
+      font-family: 'BeaufortForLOL', serif;
+    }
+
+    .overlay-container {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { box-shadow: 0 0 8px 0 rgba(183, 155, 93, 0); }
+      50% { box-shadow: 0 0 14px 2px rgba(183, 155, 93, 0.25); }
+    }
+
+    .overlay-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      pointer-events: none;
+    }
+
+    .shimmer-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(183,155,93,0.5), transparent);
+      animation: shimmer-opacity 4s ease-in-out infinite;
+    }
+
+    .shimmer-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(183,155,93,0.3), transparent);
+      animation: shimmer-opacity 4s ease-in-out infinite 2s;
+    }
+
+    @keyframes shimmer-opacity {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+
+    .portal-section {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 13%;
+      bottom: 52%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+
+    .augments-section {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 62%;
+      bottom: 4%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 19px;
+      overflow: hidden;
+    }
+
+    .portal-text, .augment-text {
+      font-size: 1.25rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      color: #f1f5f9;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .augment-text { font-size: 1rem; }
+
+    .waiting {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      font-style: italic;
+      opacity: 0.4;
+    }
+
+    .tier-gold { color: hsl(45, 90%, 55%); }
+    .tier-prismatic {
+      background: linear-gradient(to right, #ff71ce, #01cdfe, #05ffa1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .portal-enter {
+      animation: portal-enter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes portal-enter {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+        filter: blur(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    .augment-item {
+      margin: 2px 0;
+      opacity: 0;
+      animation: augment-enter 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes augment-enter {
+      from {
+        opacity: 0;
+        transform: translateX(-16px);
+        filter: blur(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay-container">
+    <img class="overlay-frame" src="overlay-frame.png" alt="">
+    <div class="shimmer-top"></div>
+    <div class="shimmer-bottom"></div>
+
+    <div class="portal-section">
+      <div id="portal-content"></div>
+    </div>
+
+    <div class="augments-section">
+      <div id="augments-content"></div>
+    </div>
+  </div>
+
+  <script type="application/json" id="overlay-data">%%OVERLAY_JSON%%</script>
+  <script>
+    (function(){
+      var el = document.getElementById("overlay-data");
+      var raw = el ? el.textContent : "";
+      try {
+        window.__OVERLAY_DATA__ = (raw.indexOf("%%OVERLAY_JSON%%") >= 0 || raw.length < 5) ? {portal:"",augments:""} : JSON.parse(raw);
+      } catch(e) { window.__OVERLAY_DATA__ = {portal:"",augments:""}; }
+      if (!window.__OVERLAY_DATA__.portal) window.__OVERLAY_DATA__.portal = "";
+      if (!window.__OVERLAY_DATA__.augments) window.__OVERLAY_DATA__.augments = "";
+    })();
+  </script>
+  <script>
+    (function() {
+      var portalEl = document.getElementById('portal-content');
+      var augmentsEl = document.getElementById('augments-content');
+
+      function escapeHtml(s) {
+        var div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function updateUI(portal, augmentsStr) {
+        portalEl.innerHTML = portal
+          ? '<p class="portal-text portal-enter">' + escapeHtml(portal) + '</p>'
+          : '<span class="waiting">Waiting...</span>';
+
+        if (augmentsStr) {
+          var lines = augmentsStr.split('\n').filter(Boolean);
+          augmentsEl.innerHTML = lines.map(function(line, i) {
+            var tier = 1;
+            var display = line;
+            var pipe = line.lastIndexOf('|');
+            if (pipe >= 0 && pipe < line.length - 1) {
+              var t = line.charAt(pipe + 1);
+              if (t === '2') { tier = 2; display = line.substring(0, pipe); }
+              else if (t === '3') { tier = 3; display = line.substring(0, pipe); }
+            }
+            var tierClass = tier === 2 ? ' tier-gold' : tier === 3 ? ' tier-prismatic' : '';
+            var delay = (i * 100) + 'ms';
+            return '<p class="augment-text augment-item' + tierClass + '" style="animation-delay:' + delay + '">' + escapeHtml(display) + '</p>';
+          }).join('');
+        } else {
+          augmentsEl.innerHTML = '<span class="waiting">Waiting...</span>';
+        }
+      }
+
+      var data = window.__OVERLAY_DATA__ || {};
+      var portal = data.portal || null;
+      var augments = (data.augments || data.augment || '').replace(/\\n/g, '\n').trim() || null;
+      updateUI(portal, augments);
+
+      /* file:// blocks fetch (CORS). Reload every 4s to pick up augment selection sooner. */
+      setTimeout(function() {
+        var base = location.href.split('?')[0];
+        location.href = base + '?t=' + Date.now();
+      }, 4000);
+    })();
+  </script>
+</body>
+</html>
