@@ -2,6 +2,8 @@
 Shows Portal and Augments for Teamfight Tactics (TFT) in an easy to use OBS overlay.
 No Twitch integration, no chat commands, no external apps — it's entirely self-contained in OBS!
 
+![](https://github.com/AnimatedPanda/TFTPortal-OBS-Plugin/blob/main/Example%20Animation.gif?raw=true)
+
 1. Install the plugin files
 - Close OBS, then copy these files:
 - Place the `tftportal-plugin.dll` file into: C:\Program Files\obs-studio\obs-plugins\64bit\
