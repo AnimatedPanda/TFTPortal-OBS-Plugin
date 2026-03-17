@@ -43,4 +43,4 @@ Twitter/X - @AnimatedPandaTV
 # Support <3
 Please consider buying me a coffee ;)
 
-[!["Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://buymeacoffee.com/animatedpanda))
+[!["Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://buymeacoffee.com/animatedpanda](https://buymeacoffee.com/animatedpanda))
