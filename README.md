@@ -40,7 +40,7 @@ Twitter/X - @AnimatedPandaTV
 ## SPECIAL THANKS
 - twitch.tv/BoxBox & twitch.tv/aterial - For the original inspiration
 
-# Support
+# Support <3
 Please consider buying me a coffee ;)
 
 [!["Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)]([https://www.buymeacoffee.com/gbraad](https://buymeacoffee.com/animatedpanda))
