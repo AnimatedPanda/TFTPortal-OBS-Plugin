@@ -10,13 +10,11 @@ No Twitch integration, no chat commands, no external apps — it's entirely self
 - Place the `tftportal-plugin` folder into  C:\Program Files\obs-studio\data\obs-plugins\
 
 2. Add the Source in OBS
-- Open OBS
+- Open OBS (may need to run as Administrator) 
 - In your scene's Sources panel, click + and select **TFT Portal & Augments** (or **Browser Source** if using the overlay directly).
 - If using Browser Source: set URL to `file:///C:/Program%20Files/obs-studio/data/obs-plugins/tftportal-plugin/overlay.html` and size to 260×260.
 - Drag it above your game/desktop capture so it draws on top.
 - Resize and position as needed. (Designed for the bottom-right corner to match TFT UI.)
-
-The overlay includes glow pulse, shimmer, and smooth text animations—no npm or build step required.
 
 3. Play TFT
 - The plugin automatically scans the screen every ~2 seconds.
